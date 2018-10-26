@@ -53,7 +53,20 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import java.io.File;
-
+import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.geometry.Orientation;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 
 
 
@@ -85,6 +98,9 @@ public class game extends Application {
         playAgain.setTranslateY(300);
         playAgain.setVisible(false);
         
+        
+        final ScrollPane sc = new ScrollPane();
+        
         Group root = new Group(play,playAgain);
         Scene scene = new Scene(root, 300, 600);
         stage.setTitle("Drawing stuff");
@@ -94,6 +110,27 @@ public class game extends Application {
         play.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
             public void handle(ActionEvent event) {
+                sc.setPrefViewportWidth(300);
+                sc.setPrefViewportHeight(500);
+                sc.setTranslateX(0);
+                sc.setTranslateY(100);
+                Text v=new Text();
+                v.setX(100);
+                v.setY(50);
+                v.setFont(Font.font("Arial", 20));
+                v.setFill(Color.BLACK);
+                v.setStroke(Color.BLACK);
+                v.setStrokeWidth(1);
+                v.setText("choose team");
+                v.setVisible(true);
+                sc.setContent(v);
+                sc.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+                sc.setHbarPolicy(ScrollBarPolicy.AS_NEEDED);
+                Group root2 = new Group(sc,v);
+                Scene sScene = new Scene(root2, 300, 600);
+                stage.setTitle("scroller");
+                stage.setScene(sScene);
+                stage.show();
                 
             }
         });
