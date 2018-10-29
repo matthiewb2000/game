@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=team
+comment1.params=
+comment1.target=team()
+comment10.params=a
+comment10.target=void\ setAccro(java.lang.String)
+comment11.params=
+comment11.target=java.lang.String\ toString()
+comment2.params=n\ r\ t\ a
+comment2.target=team(java.lang.String,\ int,\ javafx.scene.control.Button,\ java.lang.String)
+comment3.params=
+comment3.target=java.lang.String\ getName()
+comment4.params=
+comment4.target=int\ getRank()
+comment5.params=
+comment5.target=javafx.scene.control.Button\ getTBut()
+comment6.params=
+comment6.target=java.lang.String\ getAccro()
+comment7.params=n
+comment7.target=void\ setName(java.lang.String)
+comment8.params=r
+comment8.target=void\ setRank(int)
+comment9.params=t
+comment9.target=void\ setTBut(javafx.scene.control.Button)
+numComments=12

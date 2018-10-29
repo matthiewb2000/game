@@ -76,6 +76,14 @@ public class game extends Application {
     public void start(Stage stage) throws  IOException {
         boolean spread = true;
         
+        team UCF=new team();
+        UCF.setName("Central Florida");
+        UCF.setRank(9);
+        UCF.setTBut(new Button());
+        UCF.setAccro("CF");
+        UCF.tBut.setText("Central Florida");
+        UCF.tBut.setTranslateX(100);
+        UCF.tBut.setTranslateY(100);
         
         
         
@@ -114,6 +122,7 @@ public class game extends Application {
                 sc.setPrefViewportHeight(500);
                 sc.setTranslateX(0);
                 sc.setTranslateY(100);
+                UCF.tBut.setVisible(true);
                 Text v=new Text();
                 v.setX(100);
                 v.setY(50);
@@ -124,6 +133,7 @@ public class game extends Application {
                 v.setText("choose team");
                 v.setVisible(true);
                 sc.setContent(v);
+                sc.setContent(UCF.tBut);
                 sc.setVbarPolicy(ScrollBarPolicy.ALWAYS);
                 sc.setHbarPolicy(ScrollBarPolicy.AS_NEEDED);
                 Group root2 = new Group(sc,v);
