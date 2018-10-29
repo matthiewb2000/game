@@ -9,10 +9,10 @@ public class team
   {
       name=" ";
       rank=0;
-      tBut.setText(" ");
-      tBut.setTranslateX(0);
-      tBut.setTranslateY(0);
-      tBut.setVisible(false);
+      //tBut.setText("null");
+      //tBut.setTranslateX(0);
+      //tBut.setTranslateY(0);
+      //tBut.setVisible(false);
       accro=" ";
   }
   public team(String n, int r, Button t, String a)
