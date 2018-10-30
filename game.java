@@ -67,6 +67,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.control.ScrollPane.ScrollBarPolicy;
+import javafx.scene.layout.FlowPane;
 
 
 
@@ -75,22 +76,56 @@ public class game extends Application {
     @Override
     public void start(Stage stage) throws  IOException {
         boolean spread = true;
+        final FlowPane container = new FlowPane();
         
+        ArrayList<team>divisionI=new ArrayList<team>();
         team UCF=new team();
+        divisionI.add(UCF);
         UCF.setName("Central Florida");
         UCF.setRank(9);
         UCF.setTBut(new Button());
         UCF.setAccro("CF");
         UCF.tBut.setText("Central Florida");
-        UCF.tBut.setTranslateX(100);
-        UCF.tBut.setTranslateY(100);
+        UCF.tBut.setTranslateX(100-(divisionI.indexOf(UCF)*100));
+        UCF.tBut.setTranslateY(50+(divisionI.indexOf(UCF)*50));
+        UCF.tBut.setPrefWidth(100);
+        container.getChildren().add(UCF.tBut);
         
+        team Temple=new team();
+        divisionI.add(Temple);
+        Temple.setName("Temple");
+        Temple.setRank(26);
+        Temple.setTBut(new Button());
+        Temple.setAccro("TPL");
+        Temple.tBut.setText("Temple");
+        Temple.tBut.setTranslateX(100-(divisionI.indexOf(Temple)*100));
+        Temple.tBut.setTranslateY(50+(divisionI.indexOf(Temple)*50));
+        Temple.tBut.setPrefWidth(100);
+        container.getChildren().add(Temple.tBut);
         
-        
-        
-        
-        
+        team Cincinnati=new team();
+        divisionI.add(Cincinnati);
+        Cincinnati.setName("Cincinnati");
+        Cincinnati.setRank(27);
+        Cincinnati.setTBut(new Button());
+        Cincinnati.setAccro("CNC");
+        Cincinnati.tBut.setText("Cincinnati");
+        Cincinnati.tBut.setTranslateX(100-(divisionI.indexOf(Cincinnati)*100));
+        Cincinnati.tBut.setTranslateY(50+(divisionI.indexOf(Cincinnati)*50));
+        Cincinnati.tBut.setPrefWidth(100);
+        container.getChildren().add(Cincinnati.tBut);
 
+        team USF=new team();
+        divisionI.add(USF);
+        USF.setName("South Florida");
+        USF.setRank(28);
+        USF.setTBut(new Button());
+        USF.setAccro("SF");
+        USF.tBut.setText("South Florida");
+        USF.tBut.setTranslateX(100-(divisionI.indexOf(USF)*100));
+        USF.tBut.setTranslateY(50+(divisionI.indexOf(USF)*50));
+        USF.tBut.setPrefWidth(100);
+        container.getChildren().add(USF.tBut);
         
         
         
@@ -118,11 +153,13 @@ public class game extends Application {
         play.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
             public void handle(ActionEvent event) {
-                sc.setPrefViewportWidth(300);
+                sc.setPrefViewportWidth(285);
                 sc.setPrefViewportHeight(500);
                 sc.setTranslateX(0);
                 sc.setTranslateY(100);
                 UCF.tBut.setVisible(true);
+                Temple.tBut.setVisible(true);
+                Cincinnati.tBut.setVisible(true);
                 Text v=new Text();
                 v.setX(100);
                 v.setY(50);
@@ -133,7 +170,7 @@ public class game extends Application {
                 v.setText("choose team");
                 v.setVisible(true);
                 sc.setContent(v);
-                sc.setContent(UCF.tBut);
+                sc.setContent(container);
                 sc.setVbarPolicy(ScrollBarPolicy.ALWAYS);
                 sc.setHbarPolicy(ScrollBarPolicy.AS_NEEDED);
                 Group root2 = new Group(sc,v);
