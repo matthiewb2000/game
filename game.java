@@ -82,7 +82,7 @@ public class game extends Application {
         team UCF=new team();
         divisionI.add(UCF);
         UCF.setName("Central Florida");
-        UCF.setRank(9);
+        UCF.setRank(12);
         UCF.setTBut(new Button());
         UCF.setAccro("CF");
         UCF.tBut.setText("Central Florida");
@@ -127,6 +127,78 @@ public class game extends Application {
         USF.tBut.setPrefWidth(100);
         container.getChildren().add(USF.tBut);
         
+        team ECU=new team();
+        divisionI.add(ECU);
+        ECU.setName("East Carolina");
+        ECU.setRank(29);
+        ECU.setTBut(new Button());
+        ECU.setAccro("EC");
+        ECU.tBut.setText("East Carolina");
+        ECU.tBut.setTranslateX(100);
+        ECU.tBut.setTranslateY(50-(divisionI.indexOf(ECU)/4*25)+((divisionI.indexOf(ECU))*50));
+        ECU.tBut.setPrefWidth(100);
+        container.getChildren().add(ECU.tBut);
+        
+        team UConn=new team();
+        divisionI.add(UConn);
+        UConn.setName("Connecticut");
+        UConn.setRank(30);
+        UConn.setTBut(new Button());
+        UConn.setAccro("CTT");
+        UConn.tBut.setText("Connecticut");
+        UConn.tBut.setTranslateX(100-((divisionI.indexOf(UConn)%4)*100));
+        UConn.tBut.setTranslateY(50-(divisionI.indexOf(UConn)/4*25)+(divisionI.indexOf(UConn)*50));
+        UConn.tBut.setPrefWidth(100);
+        container.getChildren().add(UConn.tBut);
+        
+        team HOU=new team();
+        divisionI.add(HOU);
+        HOU.setName("Houston");
+        HOU.setRank(30);
+        HOU.setTBut(new Button());
+        HOU.setAccro("HOU");
+        HOU.tBut.setText("Houston");
+        HOU.tBut.setTranslateX(100-((divisionI.indexOf(HOU)%4)*100));
+        HOU.tBut.setTranslateY(50-(divisionI.indexOf(HOU)/4*25)+(divisionI.indexOf(HOU)*50));
+        HOU.tBut.setPrefWidth(100);
+        container.getChildren().add(HOU.tBut);
+        
+        team SMU=new team();
+        divisionI.add(SMU);
+        SMU.setName("Dallas");
+        SMU.setRank(30);
+        SMU.setTBut(new Button());
+        SMU.setAccro("DAL");
+        SMU.tBut.setText("Dallas");
+        SMU.tBut.setTranslateX(100-((divisionI.indexOf(SMU)%4)*100));
+        SMU.tBut.setTranslateY(50-(divisionI.indexOf(SMU)/4*25)+(divisionI.indexOf(SMU)*50));
+        SMU.tBut.setPrefWidth(100);
+        container.getChildren().add(SMU.tBut);
+        
+        team Tulane=new team();
+        divisionI.add(Tulane);
+        Tulane.setName("New Orleans");
+        Tulane.setRank(30);
+        Tulane.setTBut(new Button());
+        Tulane.setAccro("NO");
+        Tulane.tBut.setText("New Orleans");
+        Tulane.tBut.setTranslateX(100-((divisionI.indexOf(Tulane)%4)*100));
+        Tulane.tBut.setTranslateY(50-(divisionI.indexOf(Tulane)/4*25)+(divisionI.indexOf(Tulane)*50));
+        Tulane.tBut.setPrefWidth(100);
+        container.getChildren().add(Tulane.tBut);
+        
+        team Navy=new team();
+        divisionI.add(Navy);
+        Navy.setName("Navy");
+        Navy.setRank(30);
+        Navy.setTBut(new Button());
+        Navy.setAccro("NAVY");
+        Navy.tBut.setText("Navy");
+        Navy.tBut.setTranslateX(100);
+        Navy.tBut.setTranslateY(50);
+        Navy.tBut.setPrefWidth(100);
+        container.getChildren().add(Navy.tBut);
+        
         
         
         Button play=new Button();
@@ -154,12 +226,12 @@ public class game extends Application {
                 @Override
             public void handle(ActionEvent event) {
                 sc.setPrefViewportWidth(285);
-                sc.setPrefViewportHeight(500);
+                sc.setPrefViewportHeight(1000);
                 sc.setTranslateX(0);
                 sc.setTranslateY(100);
-                UCF.tBut.setVisible(true);
-                Temple.tBut.setVisible(true);
-                Cincinnati.tBut.setVisible(true);
+                //UCF.tBut.setVisible(true);
+                //Temple.tBut.setVisible(true);
+                //Cincinnati.tBut.setVisible(true);
                 Text v=new Text();
                 v.setX(100);
                 v.setY(50);
@@ -174,7 +246,7 @@ public class game extends Application {
                 sc.setVbarPolicy(ScrollBarPolicy.ALWAYS);
                 sc.setHbarPolicy(ScrollBarPolicy.AS_NEEDED);
                 Group root2 = new Group(sc,v);
-                Scene sScene = new Scene(root2, 300, 600);
+                Scene sScene = new Scene(sc, 300, 500);
                 stage.setTitle("scroller");
                 stage.setScene(sScene);
                 stage.show();
